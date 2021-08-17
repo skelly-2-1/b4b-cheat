@@ -1,10 +1,10 @@
 # Images
 <p align="left" style="margin-bottom: 0">
-  <img src="zombies.png" width="450" title="Zombie ESP">
+  <img src="zombies.png" title="Zombie ESP">
 </p>
 
 <p align="left">
-  <img src="players.png" width="450" title="Zombie ESP">
+  <img src="players.png" title="Zombie ESP">
 </p>
 
 # Overview
