@@ -51,7 +51,6 @@ namespace b4b
     // actual function where we will be doing or devious deeds
     void main(void);
 
-    // the path where the loader was started
     namespace interfaces
     {
 
@@ -105,11 +104,11 @@ void b4b::main(void)
 
     std::string error;
 
-    uint32_t loader_target_fps = 0u;
+    uint32_t overlay_target_fps = 0u;
 
     for (std::chrono::high_resolution_clock::time_point timeout_point = std::chrono::high_resolution_clock::now() + std::chrono::seconds(20); std::chrono::high_resolution_clock::now() < timeout_point; std::this_thread::sleep_for(std::chrono::milliseconds(100)))
     {
-        if (!interfaces::overlayrenderer->initialize(sstrenc("UnrealWindow"), sstrenc("Back 4 Blood  "), loader_target_fps, &error)) continue;
+        if (!interfaces::overlayrenderer->initialize(sstrenc("UnrealWindow"), sstrenc("Back 4 Blood  "), overlay_target_fps, &error)) continue;
 
         timeout = false;
 
@@ -118,7 +117,7 @@ void b4b::main(void)
 
     if (timeout) return;
 
-    auto target_fps = loader_target_fps;
+    auto target_fps = overlay_target_fps;
 
     if (config.misc_target_fps >= 0) target_fps = std::max(std::min(target_fps, 500u), 30u);
 
